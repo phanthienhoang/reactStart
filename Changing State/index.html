@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:rgb(165, 165, 165);
+    }
+    .container{
+        text-align: center;
+        margin-top:300px;
+        font-size: 18px
+    }
+    button{
+        color:black;
+        background-color: lightblue;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+<body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+         <script type="text/babel">
+        class TangGIam extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state={
+                        number:0,
+                };
+                this.tangClick = this.tangClick.bind(this);   
+                this.giamClick = this.giamClick.bind(this);   
+            }
+
+            tangClick() {
+                this.setState({
+                number : this.state.number +1
+                });
+            }
+            
+            giamClick() {
+                this.setState({
+                number : this.state.number -1
+                });
+            }
+            render() {
+                return (
+                <div class='container'>
+                        <h1><div>{this.state.number}</div></h1>
+                    <button type="button" onClick={this.tangClick}>+
+                    </button>
+                    <button onClick={this.giamClick}>-
+                    </button>
+                </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+        <TangGIam />,
+        document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

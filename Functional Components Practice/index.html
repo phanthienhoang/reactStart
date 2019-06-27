@@ -1,0 +1,38 @@
+<html>
+    <head>
+		<style>
+			.container{
+				background-image:url("bob.jpg");
+				color: white;
+				width: 300px;
+				height: 160px;
+			}
+		</style>
+	</head>
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>  
+        <script type="text/babel">
+			function MyInfo() {
+			  return (
+			    <div class ='container'>
+			      <h1>Bob Ziroll</h1>
+			      <p>This is a paragraph about me...</p>
+			      <ul>
+			        <li>ThaiLand</li>
+			        <li>Japan</li>
+			        <li>Nordic Countries</li>
+			      </ul>
+			    </div>
+			  )
+			}
+
+			ReactDOM.render(
+			  <MyInfo />,
+			  document.getElementById("root")
+			)
+        </script>
+    </body>
+</html>

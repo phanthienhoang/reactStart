@@ -1,0 +1,93 @@
+<html>
+    <head>
+    	<style type="text/css">
+    		body {
+			    margin: 0;
+			}
+
+			
+    	</style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>  
+        <script type="text/babel">
+        	const products = [
+			    {
+			        id: "1",
+			        name: "Pencil",
+			        price: 1,
+			        description: "Perfect for those who can't remember things! 5/5 Highly recommend."
+			    },
+			    {
+			        id: "2",
+			        name: "Housing",
+			        price: 0,
+			        description: "Housing provided for out-of-state students or those who can't commute"
+			    },
+			    {
+			        id: "3",
+			        name: "Computer Rental",
+			        price: 300,
+			        description: "Don't have a computer? No problem!"
+			    },
+			    {
+			        id: "4",
+			        name: "Coffee",
+			        price: 2,
+			        description: "Wake up!"
+			    },
+			    {
+			        id: "5",
+			        name: "Snacks",
+			        price: 0,
+			        description: "Free snacks!"
+			    },
+			    {
+			        id: "6",
+			        name: "Rubber Duckies",
+			        price: 3.50,
+			        description: "To help you solve your hardest coding problems."
+			    },
+			    {
+			        id: "7",
+			        name: "Fidget Spinner",
+			        price: 21.99,
+			        description: "Because we like to pretend we're in high school."
+			    },
+			    {
+			        id: "8",
+			        name: "Sticker Set",
+			        price: 14.99,
+			        description: "To prove to other devs you know a lot."
+			    }
+			]
+			
+			function Product(props) {
+			    return (
+			        <div>
+			            <h2>{props.product.name}</h2>
+			            <p>{props.product.price.toLocaleString("en-US", { style: "currency", currency: "USD" })} - {props.product.description}</p>
+			        </div>
+			    )
+			}
+
+			function App() {
+			    const productComponents = products.map(item => <Product key={item.id} product={item}/>)
+			    
+			    return (
+			        <div>
+			            {productComponents}
+			        </div>
+			    )
+			}
+
+			ReactDOM.render(
+			  <App />,
+			  document.getElementById("root")
+			)
+        </script>
+    </body>
+</html>

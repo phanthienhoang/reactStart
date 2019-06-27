@@ -1,0 +1,67 @@
+<html>
+    <head>
+    	<style type="text/css">
+    		body {
+			    margin: 0;
+			}
+
+			
+    	</style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>  
+        <script type="text/babel">
+			function Joke(props) {
+			    return (
+			        <div>
+			            <h3 style={{display: !props.question && "none"}}>Question: {props.question}</h3>
+			            <h3 style={{color: !props.question && "blue"}}>Answer: {props.answer}</h3>
+			            <hr/>
+			        </div>
+			    )
+			}
+
+			function App() {
+			    return (
+			        <div>
+						<Joke 
+							question="hoir cai gi"
+							answer="Thì Bạn sẽ đau mắt" />
+			            
+			            <Joke 
+			                question="Nếu bạn ăn nhiều đường ..." 
+			                answer="Thì Bá bị đau răng!"
+			            />
+			            
+			            <Joke 
+			                answer="Thì bạn bị Tín bóp ...!"
+			            />
+			            
+			            <Joke 
+			                question="Nếu bạn nói ..." 
+			                answer="Thì bị cho ăn gậy"
+			            />
+			            
+			            <Joke 
+			                answer="Bạn bị điên!"
+			            />
+			            
+			            <Joke 
+			                question="Nếu tôi học giỏi ..." 
+			                answer="Thì bạn quá gà"
+			            />
+			            
+			        </div>
+			    )
+			}
+
+			ReactDOM.render(
+			  <App />,
+			  document.getElementById("root")
+			)
+        </script>
+    </body>
+</html>
